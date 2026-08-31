@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Desert Surgical Staffing | Surgical Staffing Solutions</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: #f8f6f2;
+      color: #243238;
+      line-height: 1.6;
+    }
+
+    header {
+      background: #243238;
+      color: white;
+      padding: 22px 7%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .logo {
+      font-size: 22px;
+      font-weight: bold;
+      letter-spacing: .5px;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin-left: 24px;
+      font-size: 15px;
+    }
+
+    nav a:hover {
+      color: #d5b98c;
+    }
+
+    .hero {
+      background: #e9e2d6;
+      padding: 90px 7%;
+      text-align: center;
+    }
+
+    .hero h1 {
+      font-size: 48px;
+      color: #243238;
+      margin-bottom: 15px;
+    }
+
+    .hero p {
+      font-size: 21px;
+      max-width: 700px;
+      margin: 0 auto 30px;
+      color: #4d5a5f;
+    }
+
+    .button {
+      display: inline-block;
+      background: #9c7954;
+      color: white;
+      padding: 14px 28px;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: bold;
+      border: none;
+      cursor: pointer;
+      font-size: 16px;
+    }
+
+    .button:hover {
+      background: #806143;
+    }
+
+    section {
+      padding: 70px 7%;
+    }
+
+    .section-title {
+      text-align: center;
+      font-size: 34px;
+      margin-bottom: 40px;
+      color: #243238;
+    }
+
+    .about {
+      max-width: 850px;
+      margin: auto;
+      text-align: center;
+      font-size: 18px;
+    }
+
+    .services {
+      background: white;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 25px;
+      max-width: 1100px;
+      margin: auto;
+    }
+
+    .card {
+      background: #f8f6f2;
+      padding: 30px;
+      border-radius: 10px;
+      text-align: center;
+      border: 1px solid #e1ddd5;
+    }
+
+    .card h3 {
+      color: #9c7954;
+      margin-bottom: 12px;
+      font-size: 21px;
+    }
+
+    .card p {
+      color: #566267;
+    }
+
+    .specialties {
+      max-width: 950px;
+      margin: auto;
+      text-align: center;
+    }
+
+    .specialty-list {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 12px;
+      margin-top: 25px;
+    }
+
+    .specialty {
+      background: #243238;
+      color: white;
+      padding: 10px 18px;
+      border-radius: 30px;
+      font-size: 15px;
+    }
+
+    .cta {
+      background: #243238;
+      color: white;
+      text-align: center;
+    }
+
+    .cta h2 {
+      font-size: 36px;
+      margin-bottom: 12px;
+    }
+
+    .cta p {
+      margin-bottom: 25px;
+      color: #e5e5e5;
+    }
+
+    /* INQUIRY FORM */
+
+    #inquiry {
+      display: none;
+      background: white;
+    }
+
+    .form-container {
+      max-width: 750px;
+      margin: auto;
+      background: #f8f6f2;
+      padding: 35px;
+      border-radius: 12px;
+      border: 1px solid #e1ddd5;
+    }
+
+    .form-container h2 {
+      text-align: center;
+      color: #243238;
+      margin-bottom: 10px;
+      font-size: 32px;
+    }
+
+    .form-container .intro {
+      text-align: center;
+      margin-bottom: 30px;
+      color: #5c686c;
+    }
+
+    label {
+      display: block;
+      margin-top: 18px;
+      margin-bottom: 6px;
+      font-weight: bold;
+      color: #243238;
+    }
+
+    input,
+    select,
+    textarea {
+      width: 100%;
+      padding: 13px;
+      border: 1px solid #cfcac1;
+      border-radius: 6px;
+      font-size: 16px;
+      background: white;
+    }
+
+    textarea {
+      min-height: 130px;
+      resize: vertical;
+    }
+
+    .form-buttons {
+      margin-top: 25px;
+      display: flex;
+      gap: 12px;
+      justify-content: center;
+    }
+
+    .close-button {
+      background: #777;
+    }
+
+    footer {
+      background: #1b272c;
+      color: white;
+      text-align: center;
+      padding: 35px 7%;
+    }
+
+    footer p {
+      margin: 5px 0;
+    }
+
+    footer a {
+      color: #d5b98c;
+      text-decoration: none;
+    }
+
+    @media (max-width: 800px) {
+      .cards {
+        grid-template-columns: 1fr;
+      }
+
+      header {
+        flex-direction: column;
+        gap: 12px;
+      }
+
+      nav a {
+        margin: 0 7px;
+      }
+
+      .hero h1 {
+        font-size: 36px;
+      }
+
+      .hero p {
+        font-size: 18px;
+      }
+
+      section {
+        padding: 55px 6%;
+      }
+
+      .form-container {
+        padding: 25px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <div class="logo">Desert Surgical Staffing</div>
+
+  <nav>
+    <a href="#home">Home</a>
+    <a href="#about">About</a>
+    <a href="#services">Services</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</header>
+
+<!-- HERO -->
+
+<section class="hero" id="home">
+  <h1>Reliable Surgical Staffing When You Need It Most</h1>
+
+  <p>
+    Professional surgical staffing solutions designed to help healthcare
+    facilities maintain coverage, efficiency, and quality patient care.
+  </p>
+
+  <a href="#inquiry" class="button" onclick="openInquiry()">
+    Request Staffing
+  </a>
+</section>
+
+<!-- ABOUT -->
+
+<section id="about">
+  <h2 class="section-title">About Desert Surgical Staffing</h2>
+
+  <div class="about">
+    <p>
+      Desert Surgical Staffing provides dependable surgical staffing
+      solutions for healthcare facilities throughout Arizona. We help
+      facilities maintain coverage during staffing shortages, vacations,
+      call-outs, increased surgical volume, and other temporary staffing needs.
+    </p>
+
+    <br>
+
+    <p>
+      With specialized experience in ophthalmology and surgical services,
+      Desert Surgical Staffing is committed to providing experienced,
+      professional, and reliable surgical personnel.
+    </p>
+
+    <br>
+
+    <strong>
+      Founded and operated by Likzy Juarez, CST
+    </strong>
+  </div>
+</section>
+
+<!-- SERVICES -->
+
+<section class="services" id="services">
+
+  <h2 class="section-title">Our Staffing Solutions</h2>
+
+  <div class="cards">
+
+    <div class="card">
+      <h3>Travel & Contract Staffing</h3>
+      <p>
+        Flexible staffing support for facilities needing experienced
+        surgical professionals for short-term or contract assignments.
+      </p>
+    </div>
+
+    <div class="card">
+      <h3>Coverage for Staffing Shortages</h3>
+      <p>
+        Reliable coverage for call-outs, vacations, leaves of absence,
+        unexpected staffing shortages, and increased surgical volume.
+      </p>
+    </div>
+
+    <div class="card">
+      <h3>Specialty-Specific Staffing</h3>
+      <p>
+        Staffing support tailored to the specialty, procedures, and
+        workflow of your surgical facility.
+      </p>
+    </div>
+
+  </div>
+</section>
+
+<!-- SPECIALTIES -->
+
+<section>
+  <h2 class="section-title">Specialty Experience</h2>
+
+  <div class="specialties">
+
+    <p>
+      Staffing support available for a variety of surgical specialties,
+      with a strong focus on ophthalmology.
+    </p>
+
+    <div class="specialty-list">
+      <span class="specialty">Ophthalmology</span>
+      <span class="specialty">General Surgery</span>
+      <span class="specialty">ENT</span>
+      <span class="specialty">Plastic Surgery</span>
+      <span class="specialty">Pain Management</span>
+    </div>
+
+  </div>
+</section>
+
+<!-- INQUIRY FORM -->
+
+<section id="inquiry">
+
+  <div class="form-container">
+
+    <h2>Request Staffing</h2>
+
+    <p class="intro">
+      Tell us what your facility needs and we'll get back to you.
+    </p>
+
+    <form onsubmit="sendInquiry(event)">
+
+      <label for="facility">Facility / Surgery Center Name *</label>
+      <input type="text" id="facility" required>
+
+      <label for="contactName">Your Name *</label>
+      <input type="text" id="contactName" required>
+
+      <label for="email">Email Address *</label>
+      <input type="email" id="email" required>
+
+      <label for="phone">Phone Number</label>
+      <input type="tel" id="phone">
+
+      <label for="specialty">Specialty Needed *</label>
+
+      <select id="specialty" required>
+        <option value="">Select a specialty</option>
+        <option>Ophthalmology</option>
+        <option>General Surgery</option>
+        <option>ENT</option>
+        <option>Plastic Surgery</option>
+        <option>Pain Management</option>
+        <option>Other</option>
+      </select>
+
+      <label for="staffing">Staffing Need *</label>
+
+      <select id="staffing" required>
+        <option value="">Select an option</option>
+        <option>PRN / Per Diem Coverage</option>
+        <option>Short-Term Coverage</option>
+        <option>Travel / Contract Staffing</option>
+        <option>Ongoing Staffing</option>
+        <option>Emergency / Last-Minute Coverage</option>
+      </select>
+
+      <label for="dates">Dates / Schedule Needed</label>
+      <input type="text" id="dates" placeholder="Example: September 10–15, 7am–3pm">
+
+      <label for="message">Tell Us About Your Staffing Need</label>
+      <textarea id="message" placeholder="Please include any important details about your staffing request."></textarea>
+
+      <div class="form-buttons">
+
+        <button type="submit" class="button">
+          Submit Staffing Request
+        </button>
+
+        <button type="button" class="button close-button" onclick="closeInquiry()">
+          Close
+        </button>
+
+      </div>
+
+    </form>
+
+  </div>
+
+</section>
+
+<!-- CONTACT -->
+
+<section class="cta" id="contact">
+
+  <h2>Need Surgical Staffing?</h2>
+
+  <p>
+    Let's discuss how Desert Surgical Staffing can help your facility.
+  </p>
+
+  <a href="#inquiry" class="button" onclick="openInquiry()">
+    Request Staffing
+  </a>
+
+  <br><br>
+
+  <p>
+    Or contact us directly:
+  </p>
+
+  <p>
+    <a href="tel:6027105404">602-710-5404</a>
+  </p>
+
+  <p>
+    <a href="mailto:desertsurgicalstaffing@gmail.com">
+      desertsurgicalstaffing@gmail.com
+    </a>
+  </p>
+
+</section>
+
+<!-- FOOTER -->
+
+<footer>
+
+  <p><strong>Desert Surgical Staffing</strong></p>
+
+  <p>
+    Professional Surgical Staffing Solutions
+  </p>
+
+  <p>
+    602-710-5404 |
+    <a href="mailto:desertsurgicalstaffing@gmail.com">
+      desertsurgicalstaffing@gmail.com
+    </a>
+  </p>
+
+  <p style="margin-top:15px;">
+    © 2026 Desert Surgical Staffing. All Rights Reserved.
+  </p>
+
+</footer>
+
+<script>
+
+function openInquiry() {
+  document.getElementById("inquiry").style.display = "block";
+
+  setTimeout(function() {
+    document.getElementById("inquiry").scrollIntoView({
+      behavior: "smooth"
+    });
+  }, 50);
+}
+
+function closeInquiry() {
+  document.getElementById("inquiry").style.display = "none";
+}
+
+function sendInquiry(event) {
+
+  event.preventDefault();
+
+  const facility =
+    document.getElementById("facility").value;
+
+  const contactName =
+    document.getElementById("contactName").value;
+
+  const email =
+    document.getElementById("email").value;
+
+  const phone =
+    document.getElementById("phone").value;
+
+  const specialty =
+    document.getElementById("specialty").value;
+
+  const staffing =
+    document.getElementById("staffing").value;
+
+  const dates =
+    document.getElementById("dates").value;
+
+  const message =
+    document.getElementById("message").value;
+
+  const subject =
+    encodeURIComponent(
+      "Staffing Inquiry - " + facility
+    );
+
+  const body =
+    encodeURIComponent(
+      "DESERT SURGICAL STAFFING INQUIRY\n\n" +
+
+      "Facility: " + facility + "\n" +
+      "Contact Name: " + contactName + "\n" +
+      "Email: " + email + "\n" +
+      "Phone: " + phone + "\n\n" +
+
+      "Specialty Needed: " + specialty + "\n" +
+      "Staffing Need: " + staffing + "\n" +
+      "Dates / Schedule: " + dates + "\n\n" +
+
+      "Staffing Details:\n" +
+      message
+    );
+
+  window.location.href =
+    "mailto:desertsurgicalstaffing@gmail.com" +
+    "?subject=" + subject +
+    "&body=" + body;
+}
+
+</script>
+
+</body>
+</html>
